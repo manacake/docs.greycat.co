@@ -5,9 +5,8 @@ At the core of power management is the Texas Instrument BQ24075 power management
 ## How to read BAT voltage
 Battery management can be done with a simple analog read of the battery's voltage line. Use the voltage readings to write a bit of battery management wizardry like display a battery status indicator, or perform an automatic sleep state turning off the radio, screen, and trackpad when the battery reaches a certain voltage.
 
-## Example Battery Managment Code Snippet:
-
-``` c++
+## Example Battery Managment Code Snippet
+``` cpp
 #define batteryPin ?
 
 void setup() {
@@ -32,6 +31,5 @@ void loop () {
 }
 ```
 
-## Related Documentation:
-
+## Related Documentation
 [Texas Instrument BQ24075 IC](http://www.ti.com/product/BQ24075-Q1)

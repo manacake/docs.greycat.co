@@ -1,9 +1,9 @@
 # Keypad
 ## Intro
-We reminisce mechanical cell phone keypads. In our opinion, the physical clickiness of the metal snap dome was never was never replaced by the haptic vibrators or touch screens. So we contacted our buddies in the cell phone repair markets and rummaged through some Shenzhen e-waste and discovered a gold mine: recycled qwerty keypads!  We chose our favorite and worked it into the PCB design. 
+We reminisce mechanical cell phone keypads. In our opinion, the physical clickiness of the metal snap dome was never was never replaced by the haptic vibrators or touch screens. So we contacted our buddies in the cell phone repair markets and rummaged through some Shenzhen e-waste and discovered a gold mine: recycled qwerty keypads!  We chose our favorite and worked it into the PCB design.
 
 ## Keypad hardware
-The full QWERTY keypad is off of the Blackberry 9700. The kid comes with the metal dome switch array that is placed onto the PCB AND the the 9700 keypad that is placed over the top. The result is an extremely satisfying button press. 
+The full QWERTY keypad is off of the Blackberry 9700. The kid comes with the metal dome switch array that is placed onto the PCB AND the the 9700 keypad that is placed over the top. The result is an extremely satisfying button press.
 
 ## Keypad pin function
 The circuit board design is a simple rows and columns matrix.  Columns are pulled high to 5 volts through a 10K resistor and rows are grounded. When the metal snap dowm is compressed from a keyboard press, the row and column is triggered and the keypad library recognizes the keypad press.
@@ -11,7 +11,60 @@ The circuit board design is a simple rows and columns matrix.  Columns are pulle
 [insert rows and columns schematic]
 
 ## Keypad library
-Gummies topping cupcake oat cake cake sweet roll. Gummies marshmallow pudding pudding apple pie ice cream muffin. Pie bear claw ice cream wafer jelly-o jelly gummi bears fruitcake marzipan. Chupa chups cake candy canes soufflé pastry. Biscuit topping halvah toffee macaroon candy canes. Candy canes lemon drops croissant. Chocolate bar cake donut croissant caramels. Pastry chupa chups chocolate chocolate cake soufflé cotton candy. Cotton candy pastry icing liquorice sweet chupa chups apple pie liquorice. Ice cream ice cream cookie liquorice. Ice cream danish candy candy canes. Soufflé toffee cookie apple pie carrot cake tiramisu bonbon. Icing caramels candy canes cheesecake.
+We can use a keypad library written for Arduino by Mark Stanley and Alexander Brevig. The library is included in the Arduino IDE (version 1.6.2 or later). This library helps manage the matrix style keypad button presses for our board. There are a bunch of great [examples](https://github.com/Chris--A/Keypad/tree/master/examples) (in the Arduino IDE after you've installed the Keypad library through the library manager).
 
 ## Keypad example code
-Caramels gingerbread gingerbread liquorice cotton candy apple pie jujubes cupcake tiramisu. Wafer sugar plum gingerbread chocolate. Icing pudding gummi bears dragée muffin pudding bonbon. Candy gingerbread topping apple pie fruitcake. Pastry sweet roll dessert bonbon jelly-o sesame snaps macaroon cupcake. Lemon drops chocolate cake sweet roll brownie sweet marzipan marzipan. Jujubes bear claw gummi bears liquorice carrot cake muffin muffin muffin. Pudding chocolate bar tootsie roll donut dessert. Cookie gummi bears gingerbread gingerbread cheesecake. Chupa chups tart soufflé lemon drops powder toffee gummies muffin. Danish gummi bears pudding. Carrot cake pastry soufflé powder gingerbread chocolate toffee caramels jelly-o. Tiramisu chupa chups cookie. Gingerbread gingerbread ice cream soufflé wafer.
+Print pressed keys in the serial monitor:
+``` cpp
+#include <Keypad.h>
+
+const uint8_t ROWS = 5;
+const uint8_t COLS = 10;
+char keypadKeys[ROWS][COLS] = {
+  {'0', '0', '1', '2', '0', '0', '3', '4', '0', '0'},
+  {'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'},
+  {'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', '~'},
+  {'>', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '$', '<'},
+  {'0', '0', '0', '^', '0', ' ', '5', '^', '0', '0'}
+};
+
+// Connect to the row pinouts of the keypad
+uint8_t rowPins[ROWS] = {30, 31, 32, 33, 34};
+
+// Connect to the column pinouts of the keypad
+uint8_t colPins[COLS] = {35, 36, 37, 40, 41, 38, 42, 44, 45, 46};
+
+// Initialize the keypad object
+Keypad keypad(makeKeymap(keypadKeys), rowPins, colPins, ROWS, COLS);
+
+void setup(){
+  keypad.addEventListener(keyEvent);
+}
+
+char key;
+char buf[2] = {' ', '\0'};
+uint8_t keyState;
+
+void loop(){
+  key = keypad.getKey();
+}
+
+void keyEvent(KeypadEvent key) {
+  keyState = keypad.getState();
+
+  switch (keyState) {
+    case PRESSED:
+      if (key != '0') {
+        // Print valid keys only
+        buf[0] = key;
+        Serial.print(buf);
+      }
+      break;
+  }
+}
+```
+
+## Related documentation
+[Keypad Library for Arduino](https://playground.arduino.cc/Code/Keypad)
+
+[Keypad Library Source Code and Examples](https://github.com/Chris--A/Keypad)

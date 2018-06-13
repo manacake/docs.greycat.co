@@ -28,7 +28,7 @@ The TFT library also relies on the SPI library for communication with the screen
 
 ## Screen example code
 Here is an example of the screen displaying text:
-``` c++
+``` cpp
 #include <SPI.h>
 #include <TFT.h>
 
@@ -74,7 +74,7 @@ void loop() {
 ```
 
 For a feature rich screen, try loading images from the SD card as well:
-``` c++
+``` cpp
 #include <SPI.h>
 #include <SD.h>
 #include <TFT.h>
