@@ -1,16 +1,39 @@
 # Power Management
 ## Intro
 
-At the core of power managment is the Texas Instrument BQ24075 IC. The BQ24075 is an integrated Li-ion linear charger and system power path mangement device targeted at space-limited applications.  The PMIC provides VSYS with 5V from USB if plugged in, or battery voltage is USB is not plugged in.  The PMIC automatically handles charging of the battery while USB is plugged in as well.  Detailed information can be found in the related documents linked below. 
- 
+At the core of power management is the Texas Instrument BQ24075 IC. The BQ24075 is an integrated Li-ion linear charger and system power path management device targeted at space-limited applications. The PMIC (power management integrated circuit) provides VSYS (what is this??) with 5V from USB if plugged in, or battery voltage is USB is not plugged in. The PMIC automatically handles charging of the battery while USB is plugged in as well. Detailed information can be found in the related documents linked below.
+
 
 ## How to read BAT voltage
-Battery management can be done with a simple analog read of the batery's voltage line.  Feel free to use this voltage readings to write a bit of battery management wizardy like display a battery status indicator, or perform an automatic sleep state turning off the radio, screen, and trackpad when the battery reaches a certain voltage.
+Battery management can be done with a simple analog read of the battery's voltage line. Use the voltage readings to write a bit of battery management wizardry like display a battery status indicator, or perform an automatic sleep state turning off the radio, screen, and trackpad when the battery reaches a certain voltage.
 
 ## Example Battery Managment Code Snippet:
 
-[enter battery voltage read code]
+```c++
+#define batteryPin ?
+
+void setup() {
+  // Initialize serial communication
+  Serial.begin(9600);
+
+  // Pause setup while serial monitor is not opened
+  while (!Serial);
+
+  // Define batteryPin mode
+  pinMode(batteryPin, INPUT);
+}
+
+void loop () {
+  // Read the input voltage on batteryPin
+  int batteryVoltageRaw = analogRead(batteryPin);
+
+  // Convert the analog reading (which goes from 0 - 1023) to a voltage 0 - 5.
+  float batteryVoltage = batteryVoltageRaw * (5.0/1023.0);
+
+  Serial.println(batteryVoltage);
+}
+```
 
 ## Related Documentation:
 
-BQ24075: [http://www.ti.com/product/BQ24075-Q1]
+[Texas Instrument BQ24075 IC](http://www.ti.com/product/BQ24075-Q1)
