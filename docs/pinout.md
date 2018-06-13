@@ -1,10 +1,10 @@
 # Pin Definitions
 
-## Pin Definition Table 
+## Pin Definition Table
 
-| Device        | Name              | Arduino Pin | AtMega2560 Pin | AtMega 2560 Port | Desciption | 
-| --------------|:-----------------:|:-----------:|:-----------:   |:-----------:     | -------------------------------------------------------- |
-| AtMega2560    | MOSI              |             |                |                  | SPI communication line | 
+| Device        | Name              | Arduino Pin | AtMega2560 Pin | AtMega 2560 Port | Description |
+| --------------|:-----------------:|:-----------:|:--------------:|:----------------:| -------------------------------------------------------- |
+| AtMega2560    | MOSI              |             |                |                  | SPI communication line |
 | AtMega2560    | MISO              |             |                |                  | SPI commuication line |
 | AtMega2560    | RESET             |             |                |                  | SPI Reset |
 | AtMega2560    | SCK               |             |                |                  | SPI Serial Clock |
@@ -19,8 +19,8 @@
 | RFM95         | RFM_RESET         |             |                |                  | RFM95 reset pin |
 | DS1307        | SDA               |             |                |                  | Real Time Clock I2C Data line |
 | DS1307        | SCL               |             |                |                  | Real Time Clock I2C Clock line |
-| Trackpad      | TP_RESET          |             |                |                  | Trackpad Reset Line | 
-| Trackpad      | TP_SHUTDOWN       |             |                |                  | Trackpad Shutdown Line | 
+| Trackpad      | TP_RESET          |             |                |                  | Trackpad Reset Line |
+| Trackpad      | TP_SHUTDOWN       |             |                |                  | Trackpad Shutdown Line |
 | Trackpad      | TP_CS             |             |                |                  | Trackpad Chip Select Pin |
 | Trackpad      | TP_BUTTON_DETECT  |             |                |                  | Input pin detecting mechanical press of trackpad button |
 | Trackpad      | TP_MOTION         |             |                |                  | Trackpad Motion Pin |
@@ -30,7 +30,7 @@
 | Keypad        | ROW_2             |             |                |                  | Keypad Row Pin |
 | Keypad        | ROW_3             |             |                |                  | Keypad Row Pin |
 | Keypad        | ROW_4             |             |                |                  | Keypad Row Pin |
-| Keypad        | ROW_5             |             |                |                  | Keypad Row Pin | 
+| Keypad        | ROW_5             |             |                |                  | Keypad Row Pin |
 | Keypad        | COL_1             |             |                |                  | Keypad Column Pin |
 | Keypad        | COL_2             |             |                |                  | Keypad Column Pin |
 | Keypad        | COL_3             |             |                |                  | Keypad Column Pin |
