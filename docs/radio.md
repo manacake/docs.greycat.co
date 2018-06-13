@@ -15,7 +15,83 @@ Power to the radio is controlled via an AO2415A high side mosfet.  When the mosf
 After you've verified the notes above, you can get started with radio communication!  We suggest starting with the basic code snippets that we have included below.  How far you want to take it is up to you as this is by far the most excited component on the project. There are tons of unexplored opporutunities in this field that we feel our PCB design enables!
 
 ## Radio library
-Gummies topping cupcake oat cake cake sweet roll. Gummies marshmallow pudding pudding apple pie ice cream muffin. Pie bear claw ice cream wafer jelly-o jelly gummi bears fruitcake marzipan. Chupa chups cake candy canes soufflé pastry. Biscuit topping halvah toffee macaroon candy canes. Candy canes lemon drops croissant. Chocolate bar cake donut croissant caramels. Pastry chupa chups chocolate chocolate cake soufflé cotton candy. Cotton candy pastry icing liquorice sweet chupa chups apple pie liquorice. Ice cream ice cream cookie liquorice. Ice cream danish candy candy canes. Soufflé toffee cookie apple pie carrot cake tiramisu bonbon. Icing caramels candy canes cheesecake.
+We use the RadioHead library written by Mike McCauley to interface with the RFM95 radio module on our board. There are a bunch of great [examples](http://www.airspayce.com/mikem/arduino/RadioHead/examples.html) with this library in use.
 
 ## Radio example code
-Caramels gingerbread gingerbread liquorice cotton candy apple pie jujubes cupcake tiramisu. Wafer sugar plum gingerbread chocolate. Icing pudding gummi bears dragée muffin pudding bonbon. Candy gingerbread topping apple pie fruitcake. Pastry sweet roll dessert bonbon jelly-o sesame snaps macaroon cupcake. Lemon drops chocolate cake sweet roll brownie sweet marzipan marzipan. Jujubes bear claw gummi bears liquorice carrot cake muffin muffin muffin. Pudding chocolate bar tootsie roll donut dessert. Cookie gummi bears gingerbread gingerbread cheesecake. Chupa chups tart soufflé lemon drops powder toffee gummies muffin. Danish gummi bears pudding. Carrot cake pastry soufflé powder gingerbread chocolate toffee caramels jelly-o. Tiramisu chupa chups cookie. Gingerbread gingerbread ice cream soufflé wafer.
+*Setup a server that listens for messages*
+``` cpp
+#include <RH_RF95.h>
+
+#define RFM95_CS  10
+#define RFM95_INT 3
+#define RFM95_RST 49
+#define RFM95_PWR 5
+
+// Setup instance of the radio driver
+RH_RF95 rf95(RFM95_CS, RFM95_INT);
+
+void setup() {
+  pinMode(RFM95_RST, INPUT);
+  pinMode(RFM95_PWR, OUTPUT);
+  // This allows the radio module to get power
+  digitalWrite(RFM95_PWR, LOW);
+
+  // Pause setup until serial monitor is open
+  Serial.begin(9600);
+  while (!Serial);
+
+  // Initialize radio module
+  if (!rf95.init()) Serial.println("Radio init failed");
+}
+
+void loop() {
+  // If there is a message available to us
+  if (rf95.available()) {
+    uint8_t buf[RH_RF95_MAX_MESSAGE_LEN];
+    uint8_t len = sizeof(buf);
+
+    // Receive message into buf
+    if (rf95.recv(buf, &len)) {
+      Serial.print("Got message: ");
+      Serial.println((char*) buf);
+    }
+  }
+}
+```
+
+*Setup a client that spams messages*
+``` cpp
+#include <RH_RF95.h>
+
+#define RFM95_CS  10
+#define RFM95_INT 3
+#define RFM95_RST 49
+#define RFM95_PWR 5
+
+// Setup instance of the radio driver
+RH_RF95 rf95(RFM95_CS, RFM95_INT);
+
+void setup() {
+  pinMode(RFM95_RST, INPUT);
+  pinMode(RFM95_PWR, OUTPUT);
+  // This allows the radio module to get power
+  digitalWrite(RFM95_PWR, LOW);
+
+  // Pause setup until serial monitor is open
+  Serial.begin(9600);
+  while (!Serial);
+
+  // Initialize radio module
+  if (!rf95.init()) Serial.println("Radio init failed");
+}
+
+void loop() {
+  uint8_t data[] = "Hello are you there?";
+  rf95.send(data, sizeof(data));
+  rf95.waitPacketSent();
+  delay(1000);
+}
+```
+
+## Related Documentation
+[RH_RF95 Class Reference](http://www.airspayce.com/mikem/arduino/RadioHead/classRH__RF95.html)

@@ -22,14 +22,14 @@ The RFM95 radio, trackpad, and microSD card slot are also connected to the level
 :::
 After you've verified the notes above, getting started with the screen is relatively easy.  We suggest starting with the Arduino TFT library that we have outlined below.  We've included one example displaying text, and a second example displaying a .bmp from the SD card slot.
 
-## Screen library
+## Library
 We can use the Arduino TFT library included in the Arduino IDE (version 1.0.5 or later) to manage communication between our development board and the TFT LCD screen.
 
 The Arduino TFT library extends the Adafruit GFX, and Adafruit ST7735 libraries that it is based on. The GFX library is responsible for the drawing routines, while the ST7735 library is specific to the screen on the Arduino TFT. The Arduino specific additions were designed to work as similarly to the Processing API as possible.
 
 The TFT library also relies on the SPI library for communication with the screen and needs to be included.
 
-## Screen example code
+## Example code
 Here is an example of the screen displaying text:
 ``` cpp
 #include <SPI.h>
