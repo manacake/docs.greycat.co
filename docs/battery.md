@@ -1,6 +1,16 @@
-# Battery Management
+# Power Management
 ## Intro
-Tiramisu cookie bonbon chocolate cake chocolate cake toffee. Soufflé donut pastry cheesecake lemon drops. Halvah gummi bears cookie cheesecake pastry tart danish. Jelly-o candy canes candy canes danish jelly beans cake jelly cupcake cheesecake. Cupcake cupcake chocolate bar dragée powder powder. Danish pudding bonbon bonbon sesame snaps. Wafer tiramisu bonbon croissant cookie. Chupa chups danish soufflé powder icing. Pudding marzipan wafer. Liquorice donut dessert chupa chups wafer halvah. Sugar plum chocolate pudding halvah. Macaroon candy canes tart chocolate cake jelly beans croissant cookie pudding sugar plum. Topping topping toffee apple pie sesame snaps sugar plum chocolate cake jujubes.
+
+At the core of power managment is the Texas Instrument BQ24075 IC. The BQ24075 is an integrated Li-ion linear charger and system power path mangement device targeted at space-limited applications.  The PMIC provides VSYS with 5V from USB if plugged in, or battery voltage is USB is not plugged in.  The PMIC automatically handles charging of the battery while USB is plugged in as well.  Detailed information can be found in the related documents linked below. 
+ 
 
 ## How to read BAT voltage
-Pudding brownie wafer donut. Sugar plum cake jujubes powder macaroon danish. Jelly topping dragée sesame snaps. Sesame snaps chocolate croissant cake. Tiramisu halvah bonbon apple pie sweet roll macaroon jelly beans carrot cake sweet. Cotton candy tart pudding oat cake. Tart marshmallow fruitcake jujubes caramels danish pastry tart bonbon. Dessert bear claw halvah dessert jelly jelly cookie pie sesame snaps. Jelly-o jelly-o liquorice lollipop candy canes cake macaroon. Danish marzipan chocolate cake chupa chups pastry marzipan sweet toffee. Dessert ice cream chocolate apple pie cheesecake toffee marshmallow. Wafer sweet sesame snaps chocolate cake candy bear claw danish.
+Battery management can be done with a simple analog read of the batery's voltage line.  Feel free to use this voltage readings to write a bit of battery management wizardy like display a battery status indicator, or perform an automatic sleep state turning off the radio, screen, and trackpad when the battery reaches a certain voltage.
+
+## Example Battery Managment Code Snippet:
+
+[enter battery voltage read code]
+
+## Related Documentation:
+
+BQ24075: [http://www.ti.com/product/BQ24075-Q1]
