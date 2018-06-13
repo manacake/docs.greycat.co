@@ -3,7 +3,7 @@
 ## Pin Definition Table 
 
 | Device        | Name              | Arduino Pin | AtMega2560 Pin | AtMega 2560 Port | Desciption | 
-| --------------|:-----------------:|:-----------:|:--------------:|:----------------:| ---------- |
+| --------------|:-----------------:|:-----------:|:-----------:   |:-----------:     | -------------------------------------------------------- |
 | AtMega2560    | MOSI              |             |                |                  | SPI communication line | 
 | AtMega2560    | MISO              |             |                |                  | SPI commuication line |
 | AtMega2560    | RESET             |             |                |                  | SPI Reset |
