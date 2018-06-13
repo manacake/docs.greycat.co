@@ -1,7 +1,7 @@
 # Power Management
 ## Intro
 
-At the core of power management is the Texas Instrument BQ24075 IC. The BQ24075 is an integrated Li-ion linear charger and system power path management device targeted at space-limited applications. The PMIC (power management integrated circuit) provides VSYS (what is this??) with 5V from USB if plugged in, or battery voltage is USB is not plugged in. The PMIC automatically handles charging of the battery while USB is plugged in as well. Detailed information can be found in the related documents linked below.
+At the core of power management is the Texas Instrument BQ24075 power management integrated circuit (PMIC). The BQ24075 is an integrated Li-ion linear charger and system power path management device targeted at space-limited applications. The PMIC provides system voltage (VSYS) with five volts (5V) from USB if plugged in, or battery voltage if USB is not plugged in. The PMIC automatically handles charging of the battery while USB is plugged in as well. Detailed information can be found in the related documents linked below.
 
 
 ## How to read BAT voltage
