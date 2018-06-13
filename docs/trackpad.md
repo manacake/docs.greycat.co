@@ -1,12 +1,20 @@
 # Trackpad
 ## Intro
-Tiramisu cookie bonbon chocolate cake chocolate cake toffee. Soufflé donut pastry cheesecake lemon drops. Halvah gummi bears cookie cheesecake pastry tart danish. Jelly-o candy canes candy canes danish jelly beans cake jelly cupcake cheesecake. Cupcake cupcake chocolate bar dragée powder powder. Danish pudding bonbon bonbon sesame snaps. Wafer tiramisu bonbon croissant cookie. Chupa chups danish soufflé powder icing. Pudding marzipan wafer. Liquorice donut dessert chupa chups wafer halvah. Sugar plum chocolate pudding halvah. Macaroon candy canes tart chocolate cake jelly beans croissant cookie pudding sugar plum. Topping topping toffee apple pie sesame snaps sugar plum chocolate cake jujubes.
+The trackpad is another Shenzhen e-waste find.  These leftover 8520 trackpads fit perfectly into the 9700 keypad and with a bit of help from some arduino forums, we were able to hobble together some functioning trackpad code.  It turns out, this device is relatively easy to communicate with over SPI with the devices returning changes in x and y cordinates when the user swipes across the surface of the device.  We've included some conviently converts this data into a clean 'swipe right' or 'swipe left' when an event is detected. 
 
 ## Trackpad hardware
-Pudding brownie wafer donut. Sugar plum cake jujubes powder macaroon danish. Jelly topping dragée sesame snaps. Sesame snaps chocolate croissant cake. Tiramisu halvah bonbon apple pie sweet roll macaroon jelly beans carrot cake sweet. Cotton candy tart pudding oat cake. Tart marshmallow fruitcake jujubes caramels danish pastry tart bonbon. Dessert bear claw halvah dessert jelly jelly cookie pie sesame snaps. Jelly-o jelly-o liquorice lollipop candy canes cake macaroon. Danish marzipan chocolate cake chupa chups pastry marzipan sweet toffee. Dessert ice cream chocolate apple pie cheesecake toffee marshmallow. Wafer sweet sesame snaps chocolate cake candy bear claw danish.
+The trackpad is from the Blackberry 8250.  It's likely to have some version of the Agilent ADNS-3060 sensor inside of it common used for optimical mice.  A flexible pcb breakouts out to a 20 pin Hirose connector, which can have designed into our PCB. 
 
-## Trackpad pin function
-Cupcake chocolate cake fruitcake cheesecake marshmallow gingerbread. Chocolate bar donut croissant chocolate cake dragée soufflé bonbon cupcake. Tiramisu lollipop danish gingerbread jujubes. Pastry fruitcake donut sweet pie chupa chups tiramisu cupcake. Carrot cake chocolate marshmallow topping sugar plum pudding. Tiramisu liquorice chupa chups biscuit chocolate. Cupcake dessert oat cake pie danish. Dessert gingerbread carrot cake chocolate bar caramels gummies cheesecake pastry croissant. Biscuit caramels oat cake danish. Croissant icing apple pie dessert carrot cake. Gummies bear claw candy marzipan marzipan cookie liquorice powder. Tootsie roll cheesecake marzipan jelly beans. Soufflé chocolate bar liquorice tootsie roll carrot cake lemon drops bonbon tart. Pastry marzipan chupa chups cupcake caramels.
+## Working with the Screen
+::: tip Heads Up!
+The trackpad runs at 3.3 volts, so we have added the TXB0104 level shifter from the AtMega 2560 mcu to handle high speed bi-directional data. In order to transmit SPI data correction, remember to set the TXB0104's OE pin low upon startup, and then set the pin high to enable level shifted SPI communication.
+:::
+
+::: danger !
+The RFM95 radio, screen, and microSD card slot are also connected to the level shifter SPI lines, so remember to set this device select pins accordingly to ensure they do not interfere with your screen communication.
+:::
+
+After you've verified the notes above, you can get started handing data from the trackpad.  We suggest starting with the basic code snippets that we have included below.  How far you want to take it is up to you as this is by the far the most complicated and least documented device in the design.
 
 ## Trackpad library
 Gummies topping cupcake oat cake cake sweet roll. Gummies marshmallow pudding pudding apple pie ice cream muffin. Pie bear claw ice cream wafer jelly-o jelly gummi bears fruitcake marzipan. Chupa chups cake candy canes soufflé pastry. Biscuit topping halvah toffee macaroon candy canes. Candy canes lemon drops croissant. Chocolate bar cake donut croissant caramels. Pastry chupa chups chocolate chocolate cake soufflé cotton candy. Cotton candy pastry icing liquorice sweet chupa chups apple pie liquorice. Ice cream ice cream cookie liquorice. Ice cream danish candy candy canes. Soufflé toffee cookie apple pie carrot cake tiramisu bonbon. Icing caramels candy canes cheesecake.
