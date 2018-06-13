@@ -1,12 +1,18 @@
 # Radio
 ## Intro
-Tiramisu cookie bonbon chocolate cake chocolate cake toffee. Soufflé donut pastry cheesecake lemon drops. Halvah gummi bears cookie cheesecake pastry tart danish. Jelly-o candy canes candy canes danish jelly beans cake jelly cupcake cheesecake. Cupcake cupcake chocolate bar dragée powder powder. Danish pudding bonbon bonbon sesame snaps. Wafer tiramisu bonbon croissant cookie. Chupa chups danish soufflé powder icing. Pudding marzipan wafer. Liquorice donut dessert chupa chups wafer halvah. Sugar plum chocolate pudding halvah. Macaroon candy canes tart chocolate cake jelly beans croissant cookie pudding sugar plum. Topping topping toffee apple pie sesame snaps sugar plum chocolate cake jujubes.
+At the core of the Lora Text Dev Kit is the RFM95W 915mhz radio module!  We are very excited about what opporunuties the LoRa 915mhz ISM band offers.  We envision peer-to-peer communication, a portable in-the-field debug console, or simply local remote control for your LoRa control sensors and switches around your home.  We've added an edge mount SMA connector and included a 915mhz "shorty" external antenna to increase the range of these devices.
 
-## Radio hardware
-Pudding brownie wafer donut. Sugar plum cake jujubes powder macaroon danish. Jelly topping dragée sesame snaps. Sesame snaps chocolate croissant cake. Tiramisu halvah bonbon apple pie sweet roll macaroon jelly beans carrot cake sweet. Cotton candy tart pudding oat cake. Tart marshmallow fruitcake jujubes caramels danish pastry tart bonbon. Dessert bear claw halvah dessert jelly jelly cookie pie sesame snaps. Jelly-o jelly-o liquorice lollipop candy canes cake macaroon. Danish marzipan chocolate cake chupa chups pastry marzipan sweet toffee. Dessert ice cream chocolate apple pie cheesecake toffee marshmallow. Wafer sweet sesame snaps chocolate cake candy bear claw danish.
+## Getting started with the Radio
 
-## Radio pin function
-Cupcake chocolate cake fruitcake cheesecake marshmallow gingerbread. Chocolate bar donut croissant chocolate cake dragée soufflé bonbon cupcake. Tiramisu lollipop danish gingerbread jujubes. Pastry fruitcake donut sweet pie chupa chups tiramisu cupcake. Carrot cake chocolate marshmallow topping sugar plum pudding. Tiramisu liquorice chupa chups biscuit chocolate. Cupcake dessert oat cake pie danish. Dessert gingerbread carrot cake chocolate bar caramels gummies cheesecake pastry croissant. Biscuit caramels oat cake danish. Croissant icing apple pie dessert carrot cake. Gummies bear claw candy marzipan marzipan cookie liquorice powder. Tootsie roll cheesecake marzipan jelly beans. Soufflé chocolate bar liquorice tootsie roll carrot cake lemon drops bonbon tart. Pastry marzipan chupa chups cupcake caramels.
+::: danger !
+The trackpad, screen, and microSD card slot are also connected to the SPI lines, so remember to set the chip select pins accordingly to ensure they do not interfere with your radio communication.
+:::
+
+::: warning !
+Power to the radio is controlled via an AO2415A high side mosfet.  When the mosfet's control pin is set high, power to the radio will be disconnected. When the mosfet's control pin is set low, the radio will receive power and turn on.  Use this mosfet to put the device into sleep mode when you do not screen running.
+:::
+
+After you've verified the notes above, you can get started with radio communication!  We suggest starting with the basic code snippets that we have included below.  How far you want to take it is up to you as this is by far the most excited component on the project. There are tons of unexplored opporutunities in this field that we feel our PCB design enables!
 
 ## Radio library
 Gummies topping cupcake oat cake cake sweet roll. Gummies marshmallow pudding pudding apple pie ice cream muffin. Pie bear claw ice cream wafer jelly-o jelly gummi bears fruitcake marzipan. Chupa chups cake candy canes soufflé pastry. Biscuit topping halvah toffee macaroon candy canes. Candy canes lemon drops croissant. Chocolate bar cake donut croissant caramels. Pastry chupa chups chocolate chocolate cake soufflé cotton candy. Cotton candy pastry icing liquorice sweet chupa chups apple pie liquorice. Ice cream ice cream cookie liquorice. Ice cream danish candy candy canes. Soufflé toffee cookie apple pie carrot cake tiramisu bonbon. Icing caramels candy canes cheesecake.
