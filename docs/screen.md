@@ -1,15 +1,30 @@
 # Screen
 ## Intro
-Tiramisu cookie bonbon chocolate cake chocolate cake toffee. Soufflé donut pastry cheesecake lemon drops. Halvah gummi bears cookie cheesecake pastry tart danish. Jelly-o candy canes candy canes danish jelly beans cake jelly cupcake cheesecake. Cupcake cupcake chocolate bar dragée powder powder. Danish pudding bonbon bonbon sesame snaps. Wafer tiramisu bonbon croissant cookie. Chupa chups danish soufflé powder icing. Pudding marzipan wafer. Liquorice donut dessert chupa chups wafer halvah. Sugar plum chocolate pudding halvah. Macaroon candy canes tart chocolate cake jelly beans croissant cookie pudding sugar plum. Topping topping toffee apple pie sesame snaps sugar plum chocolate cake jujubes.
+Display your messages, UI, and LoRa content on the full color 1.8" TFT LCD.  The screen has a 160 x 128 pixels resolution and the ST7735R is easy to integrate with over SPI.  We've chosen a screen that is well documented on the Adafruit website and has many pre-written libraries to make getting started even easier. We've added a trasnsitor to the circuit to control power to the display to help save on battery power when the screen is not needed. 
 
-## Screen hardware
-Pudding brownie wafer donut. Sugar plum cake jujubes powder macaroon danish. Jelly topping dragée sesame snaps. Sesame snaps chocolate croissant cake. Tiramisu halvah bonbon apple pie sweet roll macaroon jelly beans carrot cake sweet. Cotton candy tart pudding oat cake. Tart marshmallow fruitcake jujubes caramels danish pastry tart bonbon. Dessert bear claw halvah dessert jelly jelly cookie pie sesame snaps. Jelly-o jelly-o liquorice lollipop candy canes cake macaroon. Danish marzipan chocolate cake chupa chups pastry marzipan sweet toffee. Dessert ice cream chocolate apple pie cheesecake toffee marshmallow. Wafer sweet sesame snaps chocolate cake candy bear claw danish.
+## Working with the Screen
+** The screen runs at 3.3 volts, so we have added the TXB0104 level shifter from the AtMega 2560 mcu to handle high speed bi-directional data. In order to transmit SPI data correction, remember to set the TXB0104's OE pin low upon startup, and then set the pin high to enable level shifted SPI communication.
 
-## Screen pin function
-Cupcake chocolate cake fruitcake cheesecake marshmallow gingerbread. Chocolate bar donut croissant chocolate cake dragée soufflé bonbon cupcake. Tiramisu lollipop danish gingerbread jujubes. Pastry fruitcake donut sweet pie chupa chups tiramisu cupcake. Carrot cake chocolate marshmallow topping sugar plum pudding. Tiramisu liquorice chupa chups biscuit chocolate. Cupcake dessert oat cake pie danish. Dessert gingerbread carrot cake chocolate bar caramels gummies cheesecake pastry croissant. Biscuit caramels oat cake danish. Croissant icing apple pie dessert carrot cake. Gummies bear claw candy marzipan marzipan cookie liquorice powder. Tootsie roll cheesecake marzipan jelly beans. Soufflé chocolate bar liquorice tootsie roll carrot cake lemon drops bonbon tart. Pastry marzipan chupa chups cupcake caramels.
+**  Power to the screen is controlled via a AO2415A high side mosfet.  When the mosfet's control pin is set high, power to the screen will be disconnected. When the mosfet's control pin is set low, the screen will receieve power and turn on.  Use this to put mosfet to put the device into sleep mode when you do not screen running.
+
+** The RFM95 radio, trackpad, and microSD card slot are also connected to the level shifter SPI lines, so remember to set this device select pins accordingly to ensure they do not interfere with your screen communication. 
+
+After you've verified the notes above, getting started with the screen is relatively easy.  We suggest starting with the Arduion TFT library that we have outlined below.  We've included one example displaying text, and a second example displaying a .bmp from the sd card slot.
 
 ## Screen library
-Gummies topping cupcake oat cake cake sweet roll. Gummies marshmallow pudding pudding apple pie ice cream muffin. Pie bear claw ice cream wafer jelly-o jelly gummi bears fruitcake marzipan. Chupa chups cake candy canes soufflé pastry. Biscuit topping halvah toffee macaroon candy canes. Candy canes lemon drops croissant. Chocolate bar cake donut croissant caramels. Pastry chupa chups chocolate chocolate cake soufflé cotton candy. Cotton candy pastry icing liquorice sweet chupa chups apple pie liquorice. Ice cream ice cream cookie liquorice. Ice cream danish candy candy canes. Soufflé toffee cookie apple pie carrot cake tiramisu bonbon. Icing caramels candy canes cheesecake.
+Link to library
+
+link to library
+
 
 ## Screen example code
-Caramels gingerbread gingerbread liquorice cotton candy apple pie jujubes cupcake tiramisu. Wafer sugar plum gingerbread chocolate. Icing pudding gummi bears dragée muffin pudding bonbon. Candy gingerbread topping apple pie fruitcake. Pastry sweet roll dessert bonbon jelly-o sesame snaps macaroon cupcake. Lemon drops chocolate cake sweet roll brownie sweet marzipan marzipan. Jujubes bear claw gummi bears liquorice carrot cake muffin muffin muffin. Pudding chocolate bar tootsie roll donut dessert. Cookie gummi bears gingerbread gingerbread cheesecake. Chupa chups tart soufflé lemon drops powder toffee gummies muffin. Danish gummi bears pudding. Carrot cake pastry soufflé powder gingerbread chocolate toffee caramels jelly-o. Tiramisu chupa chups cookie. Gingerbread gingerbread ice cream soufflé wafer.
+Here is an example of the screen displaying text:
+< example code snipped where the screen displays text > 
+
+For a feature rich screen, try loading images from the SD card as well:
+< example code snippet where the screen displays a bitmap >
+
+## External Documentation
+- link to adafruit libraries
+- 
+- link replacement screen: https://www.adafruit.com/product/618?gclid=CjwKCAjwgYPZBRBoEiwA2XeupcHyJD6ue7QIIfes3cSHH3tqSKE2JgLOSNm2Afju_Abxn2sevnob8RoChVwQAvD_BwE
