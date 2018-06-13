@@ -2,8 +2,11 @@
 ## Intro
 Display your messages, UI, and LoRa content on the full color 1.8" TFT LCD.  The screen has a 160 x 128 pixels resolution and the ST7735R is easy to integrate with over SPI.  We've chosen a screen that is well documented on the Adafruit website and has many pre-written libraries to make getting started even easier. We've added a transistor to the circuit to control power to the display to help save on battery power when the screen is not needed.
 
-## Hardware
+## Hardware Dimensions
 <img src="./assets/screen_dimensions.jpg" alt="Screen Dimensions">
+
+## Pinout Definitions
+<img src="./assets/screen_pinout.jpg" alt="Screen Pinout Definitions">
 
 ## Working with the Screen
 ::: tip Heads Up!
