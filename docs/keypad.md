@@ -1,9 +1,9 @@
 # Keypad
 ## Intro
-We reminisce mechanical cell phone keypads. In our opinion, the physical clickiness of the metal snap dome was never was never replaced by the haptic vibrators or touch screens. So we contacted our buddies in the cell phone repair markets and rummaged through some Shenzhen e-waste and discovered a gold mine: recycled qwerty keypads!  We chose our favorite and worked it into the PCB design.
+We reminisce mechanical cell phone keypads. In our opinion, the physical clickiness of the metal snap dome was never replaced by the haptic vibrators or touch screens. So we contacted our buddies in the cell phone repair markets, rummaged through some Shenzhen e-waste, and discovered a gold mine: recycled qwerty keypads!  We chose our favorite and worked it into the PCB design.
 
 ## Keypad hardware
-The full QWERTY keypad is off of the Blackberry 9700. The kid comes with the metal dome switch array that is placed onto the PCB AND the the 9700 keypad that is placed over the top. The result is an extremely satisfying button press.
+The full QWERTY keypad is off of the Blackberry 9700. The kit comes with the metal dome switch array that is placed onto the PCB AND the the 9700 keypad that is placed over the top. The keypad pressure fits onto the pcb, or can be held in place by a case.  The result is an extremely satisfying button press.
 
 ## Keypad pin function
 The circuit board design is a simple rows and columns matrix.  Columns are pulled high to 5 volts through a 10K resistor and rows are grounded. When the metal snap dowm is compressed from a keyboard press, the row and column is triggered and the keypad library recognizes the keypad press.
