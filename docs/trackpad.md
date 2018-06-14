@@ -1,9 +1,9 @@
 # Trackpad
 ## Intro
-The trackpad is another Shenzhen e-waste find.  These leftover 8520 trackpads fit perfectly into the 9700 keypad and with a bit of help from some Arduino forums, we were able to hobble together some functioning trackpad code.  It turns out, this device is relatively easy to communicate with over SPI with the devices returning changes in x and y coordinates when the user swipes across the surface of the device.  We've included some conveniently converts this data into a clean 'swipe right' or 'swipe left' when an event is detected.
+The trackpad is another Shenzhen e-waste find.  These leftover 8520 trackpads fit perfectly into the 9700 keypad and with a bit of help from some Arduino forums, we were able to hobble together some functioning trackpad code.  It turns out, this device is relatively easy to communicate with over SPI. The devices returns changes in x and y coordinates when the user swipes across the surface of the device.  We've included some code that conveniently converts this data into a clean 'swipe right' or 'swipe left' when an event is detected.
 
 ## Trackpad hardware
-The trackpad is from the Blackberry 8250.  It's likely to have some version of the Agilent ADNS-3060 sensor inside of it commonly used for optical mice.  A flexible PCB breakouts out to a 20 pin Hirose connector, which can have designed into our PCB.
+The trackpad is from the Blackberry 8250.  It's likely to have some version of the Agilent ADNS-3060 sensor inside of it commonly used for optical mice.  A flexible PCB breakouts out to a 20 pin Hirose connector, which have designed into our PCB.
 
 ## Working with the Screen
 ::: tip Heads Up!
@@ -11,13 +11,13 @@ The trackpad runs at 3.3 volts, so we have added the TXB0104 level shifter from 
 :::
 
 ::: danger !
-The RFM95 radio, screen, and microSD card slot are also connected to the level shifter SPI lines, so remember to set this device select pins accordingly to ensure they do not interfere with your screen communication.
+The RFM95 radio, screen, and microSD card slot are also connected to the level shifter SPI lines, so remember to set these devices' chip select pins accordingly to ensure they do not interfere with your screen communication.
 :::
 
-After you've verified the notes above, you can get started handing data from the trackpad.  We suggest starting with the basic code snippets that we have included below.  How far you want to take it is up to you as this is by the far the most complicated and least documented device in the design.
+After you've verified the notes above, you can get started handling data from the trackpad.  We suggest starting with the basic code snippets that we have included below.  How far you want to take it is up to you as this is by the far the most complicated and least documented device in the design.
 
 ## Trackpad library
-There's currently no library written for the trackpad we use (but let us know if you come across one). As of now, we can access the registers of the trackpad chip using the Arduino SPI library. This library allows you to communicate with SPI devices on our board, with the board itself as the master device.
+Currently there is no library written for the trackpad we use (but let us know if you come across one). As of now, we can access the registers of the trackpad chip using the Arduino SPI library. 
 
 We can define two basic functions to read from and write to the trackpad CPU register. See code snippet below.
 
