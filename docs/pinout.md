@@ -42,4 +42,44 @@
 | Keypad        | COL_9             | 45          | 39             | PL4              | Keypad Column Pin |
 | Keypad        | COL_10            | 46          | 38             | PL3              | Keypad Column Pin |
 
-## Arduino Full Pin Defiintion and Setup Code Snippet
+## Arduino Full Pin Defiintion Code Snippet
+``` cpp
+//include libraries
+
+//pin defintions
+#define LVL_SHIFT_EN = 2
+
+#define TFT_PWR_EN = 4
+#define TFT_RESET = 29
+#define TFT_DC = 28
+#define TFT_CS = 27
+
+#define RFM_PWR_EN = 5
+#define RFM_INT = 3
+#define RFM_CS = 10
+
+#define TP_RESET = 25
+#define TP_SHUTDOWN = 24
+#define TP_CS = 47
+#define TP_BUTTON_DETECT = 23
+#define TP_MOTION = 48
+
+#define SD_CS = 22
+#define DET_CARD = 39
+
+#define ROW_1 = 30
+#define ROW_2 = 31
+#define ROW_3 = 32
+#define ROW_4 = 33
+#define ROW_5 = 34
+#define COL_1 = 35
+#define COL_2 = 36
+#define COL_3 = 37
+#define COL_4 = 40
+#define COL_5 = 41
+#define COL_6 = 38
+#define COL_7 = 42
+#define COL_8 = 44
+#define COL_9 = 45
+#define COL_10 = 46
+```
