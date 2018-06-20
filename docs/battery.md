@@ -7,7 +7,7 @@ Battery management can be done with a simple analog read of the battery's voltag
 
 ## Example Battery Managment Code Snippet
 ``` cpp
-#define batteryPin ?
+#define BAT_PIN A7
 
 void setup() {
   // Initialize serial communication
@@ -17,12 +17,12 @@ void setup() {
   while (!Serial);
 
   // Define batteryPin mode
-  pinMode(batteryPin, INPUT);
+  pinMode(BAT_PIN, INPUT);
 }
 
 void loop () {
   // Read the input voltage on batteryPin
-  int batteryVoltageRaw = analogRead(batteryPin);
+  int batteryVoltageRaw = analogRead(BAT_PIN);
 
   // Convert the analog reading (which goes from 0 - 1023) to a voltage 0 - 5.
   float batteryVoltage = batteryVoltageRaw * (5.0/1023.0);
