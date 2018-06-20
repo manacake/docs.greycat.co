@@ -1,15 +1,46 @@
 # Getting Started
 ## Intro
-Tiramisu <a href="/">cookie bonbon</a> chocolate cake chocolate cake toffee. Soufflé donut pastry cheesecake lemon drops. Halvah gummi bears cookie cheesecake pastry tart danish. Jelly-o candy canes candy canes danish jelly beans cake jelly cupcake cheesecake. Cupcake cupcake chocolate bar dragée powder powder. Danish pudding bonbon bonbon sesame snaps. Wafer tiramisu bonbon croissant cookie. Chupa chups danish soufflé powder icing. Pudding marzipan wafer. Liquorice donut dessert chupa chups wafer halvah. Sugar plum chocolate pudding halvah. Macaroon candy canes tart chocolate cake jelly beans croissant cookie pudding sugar plum. Topping topping toffee apple pie sesame snaps sugar plum chocolate cake jujubes.
+Hello! And welcome to the wonderful world of local peer-to-peer communication.  In our opinion, we've hobbled together a pretty interesting Dev Kit, and we are SO EXCITED to share it with you.  Portable LoRa console, remote control for all of your LoRa connected device, or peer-to-peer off grid texting device, we think there are a lot of interesting devices that can come out of this project. We can't wait to see what you come up with!  The docs are a work in progress, and we update them daily. If you don't see the information you want, just send us a purrr at meow@greycat.co with your request and we'll see what we can do!
 
 ## What's in your kit!?
-Pudding brownie wafer donut. Sugar plum cake jujubes powder macaroon danish. Jelly topping dragée sesame snaps. Sesame snaps chocolate croissant cake. Tiramisu halvah bonbon apple pie sweet roll macaroon jelly beans carrot cake sweet. Cotton candy tart pudding oat cake. Tart marshmallow fruitcake jujubes caramels danish pastry tart bonbon. Dessert bear claw halvah dessert jelly jelly cookie pie sesame snaps. Jelly-o jelly-o liquorice lollipop candy canes cake macaroon. Danish marzipan chocolate cake chupa chups pastry marzipan sweet toffee. Dessert ice cream chocolate apple pie cheesecake toffee marshmallow. Wafer sweet sesame snaps chocolate cake candy bear claw danish.
+Your kit comes with everything you need to start sending an receiving messages. That includes:
 
-## How to assemble
-Cupcake chocolate cake fruitcake cheesecake marshmallow gingerbread. Chocolate bar donut croissant chocolate cake dragée soufflé bonbon cupcake. Tiramisu lollipop danish gingerbread jujubes. Pastry fruitcake donut sweet pie chupa chups tiramisu cupcake. Carrot cake chocolate marshmallow topping sugar plum pudding. Tiramisu liquorice chupa chups biscuit chocolate. Cupcake dessert oat cake pie danish. Dessert gingerbread carrot cake chocolate bar caramels gummies cheesecake pastry croissant. Biscuit caramels oat cake danish. Croissant icing apple pie dessert carrot cake. Gummies bear claw candy marzipan marzipan cookie liquorice powder. Tootsie roll cheesecake marzipan jelly beans. Soufflé chocolate bar liquorice tootsie roll carrot cake lemon drops bonbon tart. Pastry marzipan chupa chups cupcake caramels.
+- PCBA: At the core of the circuit board is the AtMega2560 mcu.  If you've ever used the Arduino Mega, it's the same chip!  From there we've included all of the power management necessities to run of battery and circuitry for adding a TFT LCD, the RFM95 radio module, a trackpad, and a keypad.
+[screenshot]
+
+- 1.8" LCD TFT screen 
+[screenshot]
+
+- Metal Dome Keypad Array
+[screenshot]
+
+- Keypad 
+[screenshot]
+
+- 915mhz antenna
+[screenshot]
+
+- Trackpad
+[screenshot]
 
 ## How to flash
-Gummies topping cupcake oat cake cake sweet roll. Gummies marshmallow pudding pudding apple pie ice cream muffin. Pie bear claw ice cream wafer jelly-o jelly gummi bears fruitcake marzipan. Chupa chups cake candy canes soufflé pastry. Biscuit topping halvah toffee macaroon candy canes. Candy canes lemon drops croissant. Chocolate bar cake donut croissant caramels. Pastry chupa chups chocolate chocolate cake soufflé cotton candy. Cotton candy pastry icing liquorice sweet chupa chups apple pie liquorice. Ice cream ice cream cookie liquorice. Ice cream danish candy candy canes. Soufflé toffee cookie apple pie carrot cake tiramisu bonbon. Icing caramels candy canes cheesecake.
+We've designed the PCB to be as easy to use as we could. The board is Arduino compatible and you can flash the device the same way you would flash and Arduino Mega using the Arduion IDE. Here is a step by step for using the Arduino IDE:
+
+1) Plug device into computering using a microUSB cable (make sure you are using a data capable microUSB cable).
+[photo]
+
+2) Select the COM port 
+[screen shot]
+
+3) Select the board
+[screen shot]
+
+Warning
+The DTR circuitry is a little off in the first version of this PCB. In order to work correctly, plug in the dev kit and quickly press the upload button.  If you plug in the device, and wait several seconds, and then hit upload, the device will not flash correctly.  This error is being fixed on the next version of the PCB. If you would like to know more about this error, feel free to send a purr to meow@greycat.co
 
 ## Hello world!
-Caramels gingerbread gingerbread liquorice cotton candy apple pie jujubes cupcake tiramisu. Wafer sugar plum gingerbread chocolate. Icing pudding gummi bears dragée muffin pudding bonbon. Candy gingerbread topping apple pie fruitcake. Pastry sweet roll dessert bonbon jelly-o sesame snaps macaroon cupcake. Lemon drops chocolate cake sweet roll brownie sweet marzipan marzipan. Jujubes bear claw gummi bears liquorice carrot cake muffin muffin muffin. Pudding chocolate bar tootsie roll donut dessert. Cookie gummi bears gingerbread gingerbread cheesecake. Chupa chups tart soufflé lemon drops powder toffee gummies muffin. Danish gummi bears pudding. Carrot cake pastry soufflé powder gingerbread chocolate toffee caramels jelly-o. Tiramisu chupa chups cookie. Gingerbread gingerbread ice cream soufflé wafer.
+Now that your device is set up, lets send the hello, world!
+
+We've included a simple code snippet that just sends serial commands back to your main computer.  So plug in the device, upload the code, open your serial monitor (double check the baudrate), and see if your LoRa Text Dev Kit talks back!
+
+[include screenshot of serial monitor]
