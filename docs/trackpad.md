@@ -29,28 +29,28 @@ We can define two basic functions to read from and write to the trackpad CPU reg
 #define TP_SHUTDOWN 24
 #define TP_CS       47
 // TODO: also add trackpad button functionality
-#define TP_BTN      23
+#define TP_BUTTON      23
 #define SD_CS       22
 #define TFT_CS      27
-#define RF95_CS     10
-#define LVL_SHIFT   2
+#define RFM_CS     10
+#define LVL_SHIFT_EN   2
 
 void setup() {
   pinMode(TP_SHUTDOWN, OUTPUT);
   pinMode(TP_RESET, OUTPUT);
   pinMode(TP_CS, OUTPUT);
-  pinMode(TP_BTN, INPUT);
-  pinMode(LVL_SHIFT, OUTPUT);
+  pinMode(TP_BUTTON, INPUT);
+  pinMode(LVL_SHIFT_EN, OUTPUT);
 
   // Turn off other SPI
   // TODO: confirm if we really need to do this o-O
   digitalWrite(SD_CS, HIGH);
   digitalWrite(TFT_CS, HIGH);
-  digitalWrite(RF95_CS, HIGH);
+  digitalWrite(RFM_CS, HIGH);
 
-  digitalWrite(LVL_SHIFT, LOW);
+  digitalWrite(LVL_SHIFT_EN, LOW);
   delay(1000);
-  digitalWrite(LVL_SHIFT, HIGH);
+  digitalWrite(LVL_SHIFT_EN, HIGH);
 
   // ADNS-3060 does not perform an internal power up self-reset
   // Force a reset
