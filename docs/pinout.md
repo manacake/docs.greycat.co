@@ -41,6 +41,7 @@
 | Keypad        | COL_8             | 44          | 40             | PL5              | Keypad Column Pin |
 | Keypad        | COL_9             | 45          | 39             | PL4              | Keypad Column Pin |
 | Keypad        | COL_10            | 46          | 38             | PL3              | Keypad Column Pin |
+| Battery       | BAT_PIN           | A7          | 90             | PF7              | Analog Voltage Read on VBAT | 
 
 ## Arduino Full Pin Defiintion Code Snippet
 ``` cpp
@@ -82,4 +83,6 @@
 #define COL_8 44
 #define COL_9 45
 #define COL_10 46
+
+#define BAT_PIN A7
 ```
