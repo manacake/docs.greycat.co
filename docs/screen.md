@@ -36,27 +36,27 @@ Here is an example of the screen displaying text:
 #include <TFT.h>
 
 // Pin definition for our dev board
-#define TFT_CS    27
-#define TFT_DC    28
-#define TFT_RST   29
-#define TFT_PWR   4
-#define LVL_SHIFT 2
+#define TFT_CS      27
+#define TFT_DC      28
+#define TFT_RESET   29
+#define TFT_PWR_EN   4
+#define LVL_SHIFT_EN    2
 
 // Create an instance of the TFT object
-TFT TFTscreen = TFT(TFT_CS, TFT_DC, TFT_RST);
+TFT TFTscreen = TFT(TFT_CS, TFT_DC, TFT_RESET);
 
 void setup() {
   // Setup the level shifter pin and the TFT power pin
-  pinMode(LVL_SHIFT, OUTPUT);
-  digitalWrite(LVL_SHIFT, LOW);
-  pinMode(TFT_PWR, OUTPUT);
-  digitalWrite(TFT_PWR, HIGH);
-  delay(1000);
+  pinMode(LVL_SHIFT_EN, OUTPUT);
+  digitalWrite(LVL_SHIFT_EN, LOW);
+  pinMode(TFT_PWR_EN, OUTPUT);
+  digitalWrite(TFT_PWR_EN, HIGH);
+  delay(100);
 
   // Bring level shifter high and screen power low
   // This enables the screen to receive power
-  digitalWrite(LVL_SHIFT, HIGH);
-  digitalWrite(TFT_PWR, LOW);
+  digitalWrite(LVL_SHIFT_EN, HIGH);
+  digitalWrite(TFT_PWR_EN, LOW);
 
   TFTscreen.begin();
 
@@ -85,13 +85,13 @@ For a feature rich screen, try loading images from the SD card as well:
 // Pin definition for our dev board
 #define TFT_CS    27
 #define TFT_DC    28
-#define TFT_RST   29
-#define TFT_PWR   4
-#define SD_CD     22
-#define LVL_SHIFT 2
+#define TFT_RESET   29
+#define TFT_PWR_EN   4
+#define DET_CARD     22
+#define LVL_SHIFT_EN 2
 
 // Create an instance of the TFT object
-TFT TFTscreen = TFT(TFT_CS, TFT_DC, TFT_RST);
+TFT TFTscreen = TFT(TFT_CS, TFT_DC, TFT_RESET);
 
 // The image to be drawn on screen
 PImage image;
@@ -103,16 +103,16 @@ SdFile root;
 
 void setup() {
   // Setup the level shifter pin and the TFT power pin
-  pinMode(LVL_SHIFT, OUTPUT);
-  digitalWrite(LVL_SHIFT, LOW);
-  pinMode(TFT_PWR, OUTPUT);
-  digitalWrite(TFT_PWR, HIGH);
-  delay(1000);
+  pinMode(LVL_SHIFT_EN, OUTPUT);
+  digitalWrite(LVL_SHIFT_EN, LOW);
+  pinMode(TFT_PWR_EN, OUTPUT);
+  digitalWrite(TFT_PWR_EN, HIGH);
+  delay(100);
 
   // Bring level shifter high and screen power low
   // This enables the screen to receive power
-  digitalWrite(LVL_SHIFT, HIGH);
-  digitalWrite(TFT_PWR, LOW);
+  digitalWrite(LVL_SHIFT_EN, HIGH);
+  digitalWrite(TFT_PWR_EN, LOW);
 
   TFTscreen.begin();
 
