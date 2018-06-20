@@ -22,19 +22,19 @@ We use the RadioHead library written by Mike McCauley to interface with the RFM9
 ``` cpp
 #include <RH_RF95.h>
 
-#define RFM95_CS  10
-#define RFM95_INT 3
-#define RFM95_RST 49
-#define RFM95_PWR 5
+#define RFM_CS  10
+#define RFM_INT 3
+#define RFM_RST 49
+#define RFM_PWR_EN 5
 
 // Setup instance of the radio driver
-RH_RF95 rf95(RFM95_CS, RFM95_INT);
+RH_RF95 rf95(RFM_CS, RFM_INT);
 
 void setup() {
-  pinMode(RFM95_RST, INPUT);
-  pinMode(RFM95_PWR, OUTPUT);
+  pinMode(RFM_RST, INPUT);
+  pinMode(RFM_PWR_EN, OUTPUT);
   // This allows the radio module to get power
-  digitalWrite(RFM95_PWR, LOW);
+  digitalWrite(RFM_PWR_EN, LOW);
 
   // Pause setup until serial monitor is open
   Serial.begin(9600);
@@ -63,19 +63,19 @@ void loop() {
 ``` cpp
 #include <RH_RF95.h>
 
-#define RFM95_CS  10
-#define RFM95_INT 3
-#define RFM95_RST 49
-#define RFM95_PWR 5
+#define RFM_CS  10
+#define RFM_INT 3
+#define RFM_RST 49
+#define RFM_PWR_EN 5
 
 // Setup instance of the radio driver
-RH_RF95 rf95(RFM95_CS, RFM95_INT);
+RH_RF95 rf95(RFM_CS, RFM_INT);
 
 void setup() {
-  pinMode(RFM95_RST, INPUT);
-  pinMode(RFM95_PWR, OUTPUT);
+  pinMode(RFM_RST, INPUT);
+  pinMode(RFM_PWR_EN, OUTPUT);
   // This allows the radio module to get power
-  digitalWrite(RFM95_PWR, LOW);
+  digitalWrite(RFM_PWR, LOW);
 
   // Pause setup until serial monitor is open
   Serial.begin(9600);
