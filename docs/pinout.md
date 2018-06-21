@@ -8,13 +8,13 @@
 | AtMega2560    | MISO              | 50          | 22             | PB3              | SPI commuication line |
 | AtMega2560    | RESET             |             | 30             | RESET            | SPI Reset |
 | AtMega2560    | SCK               | 52          | 20             | PB1              | SPI Serial Clock |
-| Level Shifter | LVL_SHIFT_EN  | 2           | 6              | PE4              | Controls OE Pin |
-| Screen        | TFT_PWR_EN     | 4           | 1              | PG5              | Controls high side mosfet controlling LED voltage. Set low to enable power |
+| Level Shifter | LVL_SHIFT_EN      | 2           | 6              | PE4              | Controls OE Pin |
+| Screen        | TFT_PWR_EN        | 4           | 1              | PG5              | Controls high side mosfet controlling LED voltage. Set low to enable power |
 | Screen        | TFT_RESET         | 29          | 71             | PA7              | LCD Reset Pin |
 | Screen        | TFT_DC            | 28          | 72             | PA6              | LCD DC Pin |
 | Screen        | TFT_CS            | 27          | 73             | PA5              | LCD Chip Select Pin |
-| RFM95         | RFM_PWR_EN         | 5           | 5              | PE3              | Controls high side mosfet controlling RFM95 voltage. Set low to enable power |
-| RFM95         | RFM_INT               | 3           | 7              | PE5              | RFM95 interrupt pin |
+| RFM95         | RFM_PWR_EN        | 5           | 5              | PE3              | Controls high side mosfet controlling RFM95 voltage. Set low to enable power |
+| RFM95         | RFM_INT           | 3           | 7              | PE5              | RFM95 interrupt pin |
 | RFM95         | RFM_CS            | 10          | 23             | PB4              | RFM95 chip select pin |
 | RFM95         | RFM_RESET         | 49          | 35             | PL0              | RFM95 reset pin |
 | DS1307        | SDA               | 20          | 44             | PD1              | Real Time Clock I2C Data line |
@@ -42,6 +42,20 @@
 | Keypad        | COL_9             | 45          | 39             | PL4              | Keypad Column Pin |
 | Keypad        | COL_10            | 46          | 38             | PL3              | Keypad Column Pin |
 | Battery       | BAT_PIN           | A7          | 90             | PF7              | Analog Voltage Read on VBAT | 
+| Test Point    | TP1               |             | 3              | PE1              | TX                 |
+| Test Point    | TP2               |             | 2              | PE0              | RX                 |
+| Test Point    | TP3               |             |                |                  |                    |
+| Test Point    | TP4               |             |                |                  | AtMega16U2 5V      |
+| Test Point    | TP5               |             |                |                  | VUSB               |
+| Test Point    | TP6               |             |                |                  | VSYS               |
+| Test Point    | TP7               |             |                |                  | 5V                 |
+| Test Point    | TP8               |             |                |                  | VBAT               |
+| Test Point    | TP9               |             |                |                  | GND                |
+| Test Point    | TP10              |             |                |                  | USB Data Negative  |
+| Test Point    | TP11              |             |                |                  | USB Data Positive  |
+| Test Point    | TP12              |             |                |                  | AtMega16U2 VUSB    |
+| Test Point    | TP13              |             |                |                  | 3V3                |
+
 
 ## Arduino Full Pin Defiintion Code Snippet
 ``` cpp
