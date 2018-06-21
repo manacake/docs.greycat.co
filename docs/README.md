@@ -5,35 +5,30 @@ Hello! And welcome to the wonderful world of local peer-to-peer communication.  
 ## What's in your kit!?
 Your kit comes with everything you need to start sending an receiving messages. That includes:
 
-- PCBA: At the core of the circuit board is the AtMega2560 mcu.  If you've ever used the Arduino Mega, it's the same chip!  From there we've included all of the power management necessities to run of battery and circuitry for adding a TFT LCD, the RFM95 radio module, a trackpad, and a keypad.
-[screenshot]
+- PCBA: At the core of the circuit board is the AtMega2560 mcu.  If you've ever used the Arduino Mega, it's the same chip!  From there we've included all of the power management necessities to run of battery and circuitry for adding a TFT LCD, the RFM95 radio module, a trackpad, and a keypad. Check out our Block Diagram to see what's going on at a high level.
 
 - 1.8" LCD TFT screen 
-[screenshot]
 
 - Metal Dome Keypad Array
-[screenshot]
 
 - Keypad 
-[screenshot]
 
 - 915mhz antenna
-[screenshot]
 
 - Trackpad
-[screenshot]
 
 ## How to flash
 We've designed the PCB to be as easy to use as we could. The board is Arduino compatible and you can flash the device the same way you would flash and Arduino Mega using the Arduion IDE. Here is a step by step for using the Arduino IDE:
 
 1) Plug device into computering using a microUSB cable (make sure you are using a data capable microUSB cable).
-[photo]
 
-2) Select the COM port 
-[screen shot]
+2) In the Arduino IDE select Tools > Boards > Arduino/Genuino Mega or Mega2560
 
-3) Select the board
-[screen shot]
+3) In the Arduion IDE select Tools > Processor > Mega2560
+
+4) In the Arduino IDe select Tools > Port > COM**(Arduino/Genuino Mega or Mega 2560)
+
+5) Press the Upload Code button in the Arduino IDE
 
 Warning
 The DTR circuitry is a little off in the first version of this PCB. In order to work correctly, plug in the dev kit and quickly press the upload button.  If you plug in the device, and wait several seconds, and then hit upload, the device will not flash correctly.  This error is being fixed on the next version of the PCB. If you would like to know more about this error, feel free to send a purr to meow@greycat.co
@@ -43,4 +38,4 @@ Now that your device is set up, lets send the hello, world!
 
 We've included a simple code snippet that just sends serial commands back to your main computer.  So plug in the device, upload the code, open your serial monitor (double check the baudrate), and see if your LoRa Text Dev Kit talks back!
 
-[include screenshot of serial monitor]
+
