@@ -1,2 +1,4 @@
+.DS_Store
+.vuepress
 docs/.vuepress
 docs/snippets
