@@ -18,7 +18,7 @@ After you've verified the notes above, you can get started with radio communicat
 We use the RadioHead library written by Mike McCauley to interface with the RFM95 radio module on our board. There are a bunch of great [examples](http://www.airspayce.com/mikem/arduino/RadioHead/examples.html) with this library in use.
 
 ## Radio example code
-*Setup a server that listens for messages*
+**Setup a server that listens for messages**
 ``` cpp
 #include <RH_RF95.h>
 
@@ -41,7 +41,14 @@ void setup() {
   while (!Serial);
 
   // Initialize radio module
-  if (!rf95.init()) Serial.println("Radio init failed");
+  if (!rf95.init()) {
+    Serial.println("RFM95 Init Failed!");
+  }
+  else {
+    // Setting frequency!
+    if (!rf95.setFrequency(915.0))
+      Serial.println("Set 915.0 Frequency Failed!");
+  }
 }
 
 void loop() {
@@ -59,34 +66,45 @@ void loop() {
 }
 ```
 
-*Setup a client that spams messages*
+**Setup a client that spams messages**
 ``` cpp
 #include <RH_RF95.h>
 
-#define RFM_CS  10
-#define RFM_INT 3
-#define RFM_RST 49
-#define RFM_PWR_EN 5
+#define RFM95_CS  10
+#define RFM95_INT 3
+#define RFM95_RST 49
+#define RFM95_PWR_EN 5
 
-// Setup instance of the radio driver
-RH_RF95 rf95(RFM_CS, RFM_INT);
+// Singleton instance of the radio driver
+RH_RF95 rf95(RFM95_CS, RFM95_INT);
 
-void setup() {
-  pinMode(RFM_RST, INPUT);
-  pinMode(RFM_PWR_EN, OUTPUT);
+void setup()
+{
+  pinMode(RFM95_RST, INPUT);
+  pinMode(RFM95_PWR_EN, OUTPUT);
   // This allows the radio module to get power
-  digitalWrite(RFM_PWR, LOW);
+  digitalWrite(RFM95_PWR_EN, LOW);
 
   // Pause setup until serial monitor is open
   Serial.begin(9600);
   while (!Serial);
 
   // Initialize radio module
-  if (!rf95.init()) Serial.println("Radio init failed");
+  if (!rf95.init()) {
+    Serial.println("RFM95 Init Failed!");
+  }
+  else {
+    // Setting frequency!
+    if (!rf95.setFrequency(915.0))
+      Serial.println("Set 915.0 Frequency Failed!");
+    // Set transmitter power to max dBm
+    rf95.setTxPower(23);
+  }
 }
 
-void loop() {
-  uint8_t data[] = "Hello are you there?";
+void loop()
+{
+  uint8_t data[] = "Hello World!";
   rf95.send(data, sizeof(data));
   rf95.waitPacketSent();
   delay(1000);

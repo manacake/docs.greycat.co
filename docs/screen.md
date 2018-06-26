@@ -10,7 +10,7 @@ Display your messages, UI, or LoRa content on the full color 1.8" TFT LCD.  The 
 
 ## Working with the Screen
 ::: tip Heads Up!
-The screen runs at 3.3 volts, so we have added the TXB0104 level shifter from the AtMega 2560 mcu to handle high speed bi-directional data. In order to transmit SPI data correctly, remember to set the TXB0104's OE pin low upon startup, and then set the pin high to enable level shifted SPI communication. Failure to do so can damage devices on the line. 
+The screen runs at 3.3 volts, so we have added the TXB0104 level shifter from the AtMega 2560 mcu to handle high speed bi-directional data. In order to transmit SPI data correctly, remember to set the TXB0104's OE pin low upon startup, and then set the pin high to enable level shifted SPI communication. Failure to do so can damage devices on the line.
 :::
 
 ::: warning !
@@ -40,7 +40,7 @@ Here is an example of the screen displaying text:
 #define TFT_DC      28
 #define TFT_RESET   29
 #define TFT_PWR_EN   4
-#define LVL_SHIFT_EN    2
+#define LVL_SHIFT_EN 2
 
 // Create an instance of the TFT object
 TFT TFTscreen = TFT(TFT_CS, TFT_DC, TFT_RESET);
@@ -83,12 +83,12 @@ For a feature rich screen, try loading images from the SD card as well:
 #include <TFT.h>
 
 // Pin definition for our dev board
-#define TFT_CS    27
-#define TFT_DC    28
-#define TFT_RESET   29
-#define TFT_PWR_EN   4
-#define DET_CARD     22
-#define LVL_SHIFT_EN 2
+#define TFT_CS       27
+#define TFT_DC       28
+#define TFT_RESET    29
+#define TFT_PWR_EN    4
+#define SD_CS        22
+#define LVL_SHIFT_EN  2
 
 // Create an instance of the TFT object
 TFT TFTscreen = TFT(TFT_CS, TFT_DC, TFT_RESET);

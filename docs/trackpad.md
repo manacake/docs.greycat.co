@@ -17,7 +17,7 @@ The RFM95 radio, screen, and microSD card slot are also connected to the level s
 After you've verified the notes above, you can get started handling data from the trackpad.  We suggest starting with the basic code snippets that we have included below.  How far you want to take it is up to you as this is by the far the most complicated and least documented device in the design.
 
 ## Trackpad library
-Currently there is no library written for the trackpad we use (but let us know if you come across one). As of now, we can access the registers of the trackpad chip using the Arduino SPI library. 
+Currently there is no library written for the trackpad we use (but let us know if you come across one). As of now, we can access the registers of the trackpad chip using the Arduino SPI library.
 
 We can define two basic functions to read from and write to the trackpad CPU register. See code snippet below.
 
@@ -25,15 +25,14 @@ We can define two basic functions to read from and write to the trackpad CPU reg
 ``` cpp
 #include <SPI.h>
 
-#define TP_RESET    25
-#define TP_SHUTDOWN 24
-#define TP_CS       47
-// TODO: also add trackpad button functionality
-#define TP_BUTTON      23
-#define SD_CS       22
-#define TFT_CS      27
-#define RFM_CS     10
-#define LVL_SHIFT_EN   2
+#define TP_RESET     25
+#define TP_SHUTDOWN  24
+#define TP_CS        47
+#define TP_BUTTON    23
+#define SD_CS        22
+#define TFT_CS       27
+#define RFM_CS       10
+#define LVL_SHIFT_EN  2
 
 void setup() {
   pinMode(TP_SHUTDOWN, OUTPUT);
