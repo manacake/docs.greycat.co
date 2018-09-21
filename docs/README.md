@@ -1,6 +1,6 @@
 # Getting Started
 ## Intro
-Hello! And welcome to the wonderful world of local peer-to-peer communication.  In our opinion, we've hobbled together a pretty interesting Dev Kit, and we are SO EXCITED to share it with you.  Portable LoRa console, remote control for all of your LoRa connected devices, or peer-to-peer off grid texting device, we think there are a lot of interesting devices that can come out of this project. We can't wait to see what you come up with!  The docs are a work in progress, and we update them daily. If you don't see the information you want, just send us a purrr at meow@greycat.co with your request and we'll see what we can do!
+Hello! And welcome to the wonderful world of local peer-to-peer communication.  In our opinion, we've hobbled together a pretty interesting Dev Kit, and we are SO EXCITED to share it with you.  Portable LoRa console, remote control for all of your LoRa connected devices, or peer-to-peer off grid texting device, we think there are a lot of interesting devices that can come out of this project. We can't wait to see what you come up with!  The docs are a work in progress. If you don't see the information you want, just send us a purrr at meow@greycat.co with your request and we'll see what we can do!
 
 ## What's in your kit!?
 Your kit comes with everything you need to start sending an receiving messages. That includes:
